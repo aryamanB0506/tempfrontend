@@ -1,18 +1,12 @@
-import { ScrollView, StyleSheet } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-import SpendingChart from '@/src/components/Graph';
-import PieChartComponent from '@/src/components/PieChart';
-import StackedBarChart from '@/src/components/BudgetBars';
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.scrollViewContent}>
-        <SpendingChart />
-        <PieChartComponent />
-        <StackedBarChart />
-      </ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.welcomeText}>React Native Template</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -22,11 +16,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000', // Set the SafeAreaView background to black
   },
-  scrollViewContent: {
-    paddingBottom: 20,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000', // Set the ScrollView background to black
-    flexGrow: 1, // Ensures the scroll content expands properly
+    backgroundColor: '#000', // Set the container background to black
+  },
+  welcomeText: {
+    color: '#fff', // White text color
+    fontSize: 24,
+    fontWeight: 'bold',
   },
 });
-
